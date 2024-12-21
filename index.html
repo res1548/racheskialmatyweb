@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .gallery div {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 768px) {
+            .gallery {
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery {
+                gap: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = document.querySelector('.gallery');
+            let columnSize = 150;
+
+            const updateGrid = (newSize) => {
+                columnSize = newSize;
+                gallery.style.gridTemplateColumns = `repeat(auto-fit, minmax(${columnSize}px, 1fr))`;
+            };
+
+            const handleTouchMove = (event) => {
+                const touch = event.touches[0];
+                if (touch.clientY > window.innerHeight / 2) {
+                    updateGrid(columnSize + 20);
+                } else {
+                    if (columnSize > 50) updateGrid(columnSize - 20);
+                }
+            };
+
+            window.addEventListener('touchmove', handleTouchMove);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="gallery">
+        <!-- Dynamically generated product images -->
+        <script>
+            for (let i = 1; i <= 160; i++) {
+                document.write(`<div><img src="product${i}.jpg" alt="Product ${i}"></div>`);
+            }
+        </script>
+    </div>
+
+</body>
+</html>
