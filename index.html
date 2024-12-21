@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (min-width: 768px) {
+            .gallery {
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery {
+                gap: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <!-- Add your product images here -->
+        <img src="images/product1.jpeg">
+        <img src="images/product1A.jpeg">
+        <img src="images/product2.jpeg">
+        <img src="images/product3.jpeg">
+        <img src="images/product4.jpeg">
+        <img src="images/product4A.jpeg">
+        <img src="images/product4B.jpeg" alt="">
+        <img src="images/product5.jpeg" alt="">
+        <img src="images/product6.jpeg" alt="">
+        <img src="images/product7.jpeg" alt="">
+        <img src="images/product8.jpeg" alt="">
+        <img src="images/product8A.jpeg" alt="">
+        <img src="images/product9.jpeg" alt="">
+        <img src="images/product10.jpeg" alt="">
+        <img src="images/product11.jpeg" alt="">
+        <img src="images/product12.jpeg" alt="">
+        <img src="images/product13.jpeg" alt="">
+        <img src="images/product13A.jpeg" alt="">
+        <img src="images/product14.jpeg" alt="">
+        <img src="images/product15.jpeg" alt="">
+        <img src="images/product15C.jpeg" alt="">
+        <img src="images/product16.jpeg" alt="">
+        <img src="images/product16B.jpeg" alt="">
+        <img src="images/product17.jpeg" alt="">
+        <img src="images/product17A.jpeg" alt="">
+        <img src="images/product18.jpeg" alt="">
+        <img src="images/product19.jpeg" alt="">
+        <img src="images/product20.jpeg" alt="">
+    </div>
+
+</body>
+</html>
